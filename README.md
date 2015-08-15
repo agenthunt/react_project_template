@@ -1,1 +1,1 @@
-Readme for eulife app challenge
+Hello world react project template with webpack
