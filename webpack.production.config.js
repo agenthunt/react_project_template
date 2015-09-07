@@ -1,9 +1,10 @@
 var webpack = require('webpack');
 var commonConfig = require('./webpack.common.js');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 var loaders = [{
   test: /\.js$/,
-  loaders: ["babel", require.resolve('react-style-syntax')],
+  loaders: ['babel', require.resolve('react-style-syntax')],
   exclude: [/node_modules/, /dependencies/]
 }];
 
@@ -14,11 +15,11 @@ module.exports = {
     './src/index.html',
   ],
   output: {
-    path: __dirname + "/assets",
-    publicPath: "",
-    filename: "js/bundle.js"
+    path: path.join(__dirname, '/assets'),
+    publicPath: '',
+    filename: 'js/bundle.js'
   },
-  target: "web",
+  target: 'web',
   module: {
     preLoaders: commonConfig.preLoaders,
     loaders: loaders.concat(commonConfig.loaders)
@@ -29,7 +30,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      config: __dirname + '/src/js/config/production.js'
+      config: paht.join(__dirname, '/src/js/config/production.js')
     }
   },
   node: commonConfig.node,
