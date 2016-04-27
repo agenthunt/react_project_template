@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var commonConfig = require('./webpack.common.js');
 var loaders = [{
   test: /\.js$/,
-  loaders: ['react-hot', 'babel?stage=0&optional=runtime', require.resolve('react-style-syntax')],
+  loaders: ['react-hot', 'babel'],
   include: __dirname + '/src/js' ,
   exclude: [/node_modules/, /dependencies/]
 }];
